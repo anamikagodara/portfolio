@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>personal portfolio</title>
+    <link rel="stylesheet" type="text\css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<style>
+    /*font-family: 'Poppins', sans-serif;
+font-family: 'Kalam', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Poppins', sans-serif;*/
+header{
+    
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9)),
+url('data:image/jpeg;base64,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');
+   
+      color:white;
+      padding:32px;
+      font-family: 'Poppins', sans-serif;
+      background-color: black;
+      width:auto
+    
+      
+
+      
+}
+.menu a:nth-child(5){
+    background: #6ab04c;
+    border-radius:8px;
+    margin: 0 1rem;
+}
+.menu a{
+    text-decoration: none;
+    color:white;
+    font-size: 1.2em;
+    padding: 0.5rem 1rem;
+}
+.menu i{
+    font-size: 1.5rem;
+    margin: 0 0.5;
+    cursor: pointer;
+}
+.logo{
+    font-size:2em;
+    letter-spacing:2px;
+    font-weight: bold;
+}
+.menu a:hover{
+    background: #6ab04c;
+    border-radius: 8px;
+
+}
+#bio{
+    cursor:pointer;
+    padding: 150px 70px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-family: 'Poppins', sans-serif;
+    flex-wrap: wrap;
+}
+.leftbio{
+    flex-basis: 40%;
+}
+.rightbio{
+    flex-basis: 60%;
+}
+.leftbio img{
+width: 90%;
+height:100%;
+border-radius: 8px;
+float:left;
+flex:display;
+align-items: normal;
+}
+.rightbio {
+    font-size: small;
+    text-align: center;
+
+    
+}
+p{
+    font-size:x-large;
+    line-height: 2.5rem;
+    font-family: 'Kalam', cursive;
+}
+.rightbio h1{
+    font-size: 3rem;
+}
+.left h2{
+    font-family: 'Poppins', sans-serif;
+    color:#6ab04c;
+
+}
+.left h1{
+    font-family: 'Kalam', cursive;
+    font-size: 4em;
+}
+.left p{
+    font-family: 'Poppins', sans-serif;
+   line-height: 2.5rem;
+}
+#hire{
+    text-decoration: none;
+    background:#6ab04c;
+    color:white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+}
+#myp{text-decoration: none;
+    color:white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    border: 1px dashed white;
+
+}
+
+nav{
+    width:100%;
+    height:100px;
+    
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    
+    font-family: 'Poppins', sans-serif;    
+    
+
+}
+.container{
+width:100%;
+height:100%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+flex-wrap: wrap;
+padding:0 70px;
+
+
+}
+.left{
+    flex-basis: 80%;
+}
+.right img{
+    flex-basis: 30%;
+    border-radius: 50%;
+    width:min-content;
+    height:min-content;
+    object-fit: contain;
+
+
+    
+}
+
+.info{
+    display:flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    text-align: left;
+}
+#follow{
+    text-align: center;
+}
+#follow i{
+     color:#6ab04c ;
+     font-size: 1.5rem;
+     margin:0 0.5rem;
+}
+.link-h{
+text-align: center;
+margin-top: 3rem;
+}
+#cv{
+    text-decoration: none;
+    color:black;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size:1.5rem ;
+    margin: 0 1rem;
+    border:1px dashed grey;
+}
+#services{
+    padding:50px 70px;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.2);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+.intro{
+    font-size: 3rem;
+}
+.card{
+    width:100%;
+    height: 100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+
+}
+.cardbody{
+    flex-basis: 30%;
+    background:white;
+    padding:1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+.cardbody h3{
+    font-size:1.5rem;
+    margin: 0.5rem 0;
+}
+.cardbody i{
+    font-size: 2rem;
+    color:#6ab04c;
+}
+.cardbody img{
+    width:100%;
+
+
+}
+
+footer{
+    background:black;
+width:98%;
+    color:beige;
+    font-size: 2rem;
+    padding:0 5rem;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: blanchedalmond;
+
+}
+
+
+</style>
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="logo">Portfolio</div>
+    <div class="menu">
+        <a href="#">Home</a> 
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">contact</a>
+        <a href="#">Hire me</a>
+        <i class="fa fa-search"></i>
+        <i class="fa fa-moon-o"></i>
+    </div>
+    </nav>
+    <div class="container">
+        <div class="left">
+            <h2> Hi,I'm Anamika</h2>
+            <h1>Student</h1>
+            <p> I am currently pursuing B.sc Honours in Computer Science.This is my second year of graduation.
+              <br>  Nowadays I'm working on  Web Dovelopment skill.I have been selected for web development internship in Bharat intern.
+
+            </p><br><br>
+            <div>
+                <a href="#" id="hire">Hire me</a>
+                <a href="#" id="myp"> My Portfolio</a>
+ 
+            </div>
+        </div>
+        <div class="right"></div>
+        <img src="">
+    </div>
+  </header> 
+  <section id="bio">
+    <div class="leftbio">
+<img src="C:\Users\Anamika\Downloads\WhatsApp Image 2023-09-19 at 12.27.34 AM.jpeg">
+    </div>
+    <div class="rightbio">
+        <div>
+            <P>MY BIOGRAPHY</P>
+            <h1> I am a student in Chaudhary Charan Singh University ,Meerut Uttarpradesh.</h1>
+            <p> I love web development.Currently, i am working on the web development skill.
+                I have been selected for the web development internship in Bharatintern.
+            I am working as a Campus Ambassador in  rendezvous ,iit delhi' 2023-2024'. </p>
+         <hr></div>
+         <div class="info">
+            <div>
+                <p> <b>Name:</b> Anamika</p>
+                <p><b>Email:</b>anmaika.godara1302@gmail.com</p>
+            </div>
+            <div>
+                <p><b>From:</b> Uttarpradesh,India</p>
+                <p><b>Phone:</b> +91 9548665075</p>
+            </div>
+         </div>
+         <div id="follow">
+            <p><b>Follow me on:</b>
+            <i class="fa fa-facebook"></i>
+        <i class="fa fa-instagram"></i>
+    <i class="fa fa-whatsapp"></i>
+<i class="fa fa-twitter"></i>
+<i class="fa fa-youtube"></i></p>
+
+         </div>
+         <div class="link-h"> 
+            <a href="#" id="hire">Hire me</a>
+            <a href="#" id="cv">Download Cv</a>
+         </div>
+
+    </div>
+  </section>
+  <section id="services">
+    <div class="intro">
+        <h1>What i do for you?</h1>
+        <div class="card ">
+            <div class="cardbody">
+                <i class="fa fa-lock"></i>
+                <h3> Web Development</h3>
+                <p>I am working on my web development skills.I will make a frontend website,with the help of HTML,CSS,Javascript</p>
+
+            </div>
+            <div class="cardbody">
+                <i class="fa fa-camera"></i>
+                <h3>Digital Marketing</h3>
+                <p>I have social media marketing skills,I worked as a campus ambassador At that time, i have learned a lot  of marketing skills.</p>
+            </div>
+            <div class="cardbody">
+                <i class="fa fa-lock"></i>
+                <h3> Graphics designer</h3>
+                <p>I am currently work as a tech team member in my college .There i do a lot of graphics designing such as poster making etc. </p>
+            </div>
+            
+        </div>
+    </div>
+     
+  </section>
+  
+  <section id="services">
+    <div class="intro">
+        <h1>Some Certificates</h1>
+        <div class="card ">
+            <div class="cardbody img">
+           <img src="C:\Users\Anamika\Downloads\WhatsApp Image 2023-09-19 at 11.22.16 PM.jpeg">
+            </div>
+            <div class="cardbody img">
+                <img  src="C:\Users\Anamika\Downloads\WhatsApp Image 2023-09-19 at 11.22.16 PM (1).jpeg">
+                 </div>
+            <div class="cardbody img">
+                <img src="C:\Users\Anamika\Downloads\GuviCertification - 089oK5FTh9I6u92187.png">    </div>
+            
+        </div>
+        
+    </div>
+     
+  </section>
+ <footer>Design By Anamika. Thank you for visiting My Portfolio.</footer>
+
+</body>
+</html>
